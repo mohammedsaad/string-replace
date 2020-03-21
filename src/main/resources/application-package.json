@@ -1,0 +1,59 @@
+{
+  processDescription: {
+    process: {
+      id: "org.n52.docker.StringReplace",
+      title: "StringReplace",
+      description: "this process replaces he wps in a text to a javaPs",
+      version: "1.0.0",
+      keywords: [
+        "string"
+      ],
+      inputs: [
+        {
+          id: "source",
+          title:"Source input text",
+          description: "Source input text to be replaced",
+          minOccurs: 1,
+          maxOccurs: 1,
+          input: {
+            formats: [
+              {
+                mimeType: "text/plain",
+                default: true
+              }
+            ]
+          }
+        }],
+      outputs: [
+        {
+          id: "output",
+          title:  "text after processing",
+          output: {
+            formats: [
+              {
+                mimeType: "text/plain",
+                default: true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    jobControlOptions: [
+      "sync-execute"
+    ],
+    outputTransmission: [
+      "value"
+    ]
+  },
+  immediateDeployment: true,
+  executionUnit: [
+    {
+      unit: {
+        type: "docker",
+        image: "mohammedsaad/service:latest"
+      }
+    }
+  ],
+  deploymentProfileName: "http://www.opengis.net/profiles/eoc/dockerizedApplication"
+}

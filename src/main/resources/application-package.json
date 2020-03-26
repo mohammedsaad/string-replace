@@ -51,7 +51,7 @@
     {
       "unit": {
         "type": "docker",
-        "image": "mohammedsaad/service:2.0"
+        "image": "mohammedsaad/service:latest"
       }
     }
   ],
